@@ -1,0 +1,48 @@
+// 1. Mixin File
+// A mixin file is a Sass partial that contains reusable chunks of CSS code, allowing you to define styles or logic that can be reused throughout your project. It helps you avoid duplication and makes your styles more maintainable.
+
+// Why You Need a Mixin File
+// To reuse styles across your project (e.g., for buttons, grid systems, media queries, etc.).
+// To add logic with parameters (e.g., dynamic padding, font sizes).
+// To keep your codebase DRY (Don't Repeat Yourself).
+// Example Mixin File: _mixins.scss
+// A mixin for responsive font sizes
+
+
+// @mixin font-size($size) {
+//     font-size: $size;
+//     line-height: calc(#{$size} * 1.2);
+//   }
+  
+//   // A mixin for breakpoints
+//   @mixin respond-to($breakpoint) {
+//     @if $breakpoint == small {
+//       @media (max-width: 600px) { @content; }
+//     } @else if $breakpoint == medium {
+//       @media (max-width: 768px) { @content; }
+//     } @else if $breakpoint == large {
+//       @media (max-width: 1200px) { @content; }
+//     }
+//   }
+  
+//   // Example mixin for reusable buttons
+//   @mixin button($bg-color, $text-color) {
+//     background-color: $bg-color;
+//     color: $text-color;
+//     padding: 0.5rem 1rem;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//   }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  

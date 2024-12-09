@@ -1,0 +1,379 @@
+@import "variables";
+@import "mixins";
+
+
+
+body {
+  
+    font-family: $font-primary;
+    font-size: 16px;
+    color: $color-white;
+    background-color: $primary;
+  }
+  
+  .main-header {
+    background-color: $primary;
+    padding: 1rem;
+    margin-bottom: 4rem;
+  
+    nav {
+      @mixin flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+
+    }
+  
+    .nav-links {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      list-style: none; 
+      padding: 0;
+      margin: 0;
+      gap: 2rem; 
+  
+      li {
+        text-align: center; 
+  
+        a {
+          display: flex; 
+          justify-content: center;
+          align-items: center;
+          text-decoration: none; 
+        }
+  
+        .image-container {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .image-container img {
+          display: block;
+          width: 40px; 
+          height: auto;
+
+          
+        }
+        
+        .image-container .hover-text {
+          position: absolute;
+          top: 10%;
+          left: 90%;
+          transform: translate(-50%, -50%);
+          color: $secondary;
+          margin: 3rem -1rem;
+          opacity: 0; 
+          transition: opacity 0.7s ease;
+        }
+        
+        .image-container:hover .hover-text {
+          opacity: 1; 
+        }
+        
+  
+      
+      }
+    }
+  }
+
+// Main header Section 
+
+
+.container {
+  display: flex;
+  margin: 0 10%;
+  max-width: 80%;
+  background:$primary-sub;
+  padding: 20px;
+
+}
+
+
+// INTRO
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10rem;
+}
+
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+.image-wrapper img {
+  height: auto;
+  width: auto;
+  object-fit: cover;
+  margin-bottom: 3rem;
+
+}
+
+
+
+
+h1 {
+  font-size: 90px;
+  margin-top: 1rem;
+  color: $fonts-red;
+  font-family: $font-primary;
+  font-weight: bold;
+
+ 
+}
+
+h1 span{
+color: $secondary;
+font-family: $font-primary;
+
+
+}
+p {
+  margin: 5px 0 15px;
+  color: $color-white;
+  font-size: 1.5rem;
+  text-align: justify;
+  
+}
+p >em {
+  color: $fonts-red;
+}
+
+
+// SOCIAL-ICONS
+
+.icon-group {
+  font-size: 1.7rem; 
+  margin-top: 2rem;
+  display: inline-flex;
+  gap: 3rem;
+  align-items: auto;
+  margin: auto;
+  align-items: center;
+  
+}
+
+.icon-group i {
+  color: $fonts-red;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+
+}
+
+.icon-group i:hover {
+  color: $secondary;
+}
+
+
+
+
+// IMAGE CAPTION
+.image-caption {
+
+  font-size: 40px;  
+  font-weight: bold; 
+  color: $secondary;
+  margin: auto;
+  align-items: center;
+  
+
+}
+
+.image-caption span {
+  color: $secondary;
+}
+
+
+
+// CHECKBOXES
+
+.custom-checkbox-group {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+ 
+   
+}
+
+.checkbox-item img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+
+}
+
+.checkbox-item span {
+  font-size: 40px;  
+  font-weight: bold; 
+}
+
+.checkbox-item span > span{
+  font-size: 25px;  
+  font-weight: bold; 
+  color: $secondary;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;/* Optional: Adjust text style */
+}
+
+
+
+
+
+// BUTTONS
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+button img {
+  margin-left: 10px; 
+  width: 30px; 
+  height: auto;
+}
+
+button {
+  background-color: $fonts-red;
+  color: white;
+  height: auto; 
+  width: auto; 
+  margin-top: 3rem;
+  padding: 1rem 2rem; 
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; 
+  text-align: left; 
+  font-size: 20px;
+  font-weight: 600;
+  font-family: $font-primary;
+  gap: 0.5rem; 
+}
+
+button:hover {
+  background-color: $secondary;
+}
+
+button:active {
+  background-color: $fonts-red;
+}
+
+
+
+
+
+// DEV-ICONS
+.dev-icons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 4rem;
+  overflow: hidden; 
+  position: relative;
+  width: 100%; 
+
+}
+
+
+.dev-icons img {
+  margin-top: 3rem;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  animation: loopIcons 10s linear infinite; /* Apply the animation */
+}
+
+
+
+@keyframes loopIcons {
+  0% {
+    transform: translateX(100%); 
+    opacity: 1; 
+  }
+  70% {
+    transform: translateX(-100%); 
+    opacity: 1;
+  }
+  85% {
+    opacity: 0; /* Fade out */
+  }
+  100% {
+    transform: translateX(100%); /* Reset to start position */
+    opacity: 0; /* Fully hidden */
+  }
+}
+
+
+
+
+
+
+// FOOTER
+
+.main-footer{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  background-color: blue
+  }
+
+
+  .main-footer p{ 
+
+   
+    }
+    
+
+
+
+
+// MEDIA QUERIES
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-pic {
+    max-width: 150px;
+  }
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .buttons button {
+    text-align: center;
+  }
+
+  .custom-checkbox-group {
+    justify-content: center;
+  }
+}
